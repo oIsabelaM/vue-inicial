@@ -1,47 +1,48 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="pagina">
+    <div class="cartao">
+      <h1>🌿 Olá, Vue!</h1>
+      <p>Meu primeiro projeto com Vue.</p>
+      <span class="etiqueta">vue-inicial</span>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+body {
+  margin: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3faf6;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #4f6b5c;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.cartao {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 28px;
+  box-shadow: 0 8px 24px rgba(129, 199, 160, 0.3);
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.cartao h1 {
+  margin: 0 0 10px;
+  color: #4a9a70;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.etiqueta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #d6f0e0;
+  color: #3d6b52;
+  font-weight: 600;
 }
 </style>
