@@ -1,0 +1,82 @@
+/* Estilos globais: cores, fontes e botões usados em todo o app. */
+
+:root {
+  --fundo: #faf7f5;
+  --superficie: #ffffff;
+  --texto: #5b5159;
+  --suave: #8c8189;
+  --titulo: #2f2830;
+  --destaque: #8f5f79;
+  --sobre-destaque: #ffffff;
+  --destaque-suave: #f2e9ed;
+  --borda: #ebe4e1;
+  --borda-forte: #d9cfd3;
+  --fonte-titulo: 'Fraunces', Georgia, serif;
+  --fonte-texto: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Modo escuro automático, conforme a configuração do aparelho */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #1c181d;
+    --superficie: #26212a;
+    --texto: #d9d1d7;
+    --suave: #a0959d;
+    --titulo: #f4eef2;
+    --destaque: #d3a1b8;
+    --sobre-destaque: #1c181d;
+    --destaque-suave: #332c37;
+    --borda: #352f39;
+    --borda-forte: #4a4250;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid var(--destaque);
+  border-radius: 10px;
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.btn-contorno {
+  background: transparent;
+  border-color: var(--borda-forte);
+  color: var(--titulo);
+}
+
+.btn-contorno:hover:not(:disabled) {
+  background: var(--destaque-suave);
+  filter: none;
+}

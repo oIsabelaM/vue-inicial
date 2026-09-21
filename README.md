@@ -1,38 +1,39 @@
-# vue-inicial
+# Clima (Vue 3)
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicativo de previsão do tempo feito com Vue 3 e Vite. Busca uma cidade pelo nome e mostra o clima atual e a previsão dos próximos cinco dias.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Busca de cidade pelo nome
+- Botão para usar a localização do aparelho (só com permissão do navegador)
+- Temperatura, sensação térmica, umidade e vento
+- Previsão dos próximos cinco dias, com máxima, mínima e chance de chuva
+- Mensagens claras para cidade não encontrada e falha de conexão
+- Guarda a última cidade pesquisada no navegador
+- Visual claro ou escuro, conforme a configuração do aparelho
 
-## Recommended Browser Setup
+## Tecnologias
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Vue 3 (Composition API com `<script setup>`), Vite, CSS puro e a API Open-Meteo.
 
-## Customize configuration
+## API
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Os dados vêm da [Open-Meteo](https://open-meteo.com/), gratuita para uso não comercial e sem chave de acesso. Licença dos dados: CC BY 4.0.
 
-## Project Setup
+## Estrutura
 
-```sh
+- `src/App.vue`: tela principal e controle do estado
+- `src/components/BuscaCidade.vue`: campo de busca e botões
+- `src/components/ClimaAtual.vue`: clima de agora
+- `src/components/Previsao.vue`: próximos dias
+- `src/services/clima.js`: chamadas à API e descrição dos códigos de clima
+- `src/assets/main.css`: cores, fontes e botões
+
+## Como executar
+
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Acesse `http://localhost:5173`.
