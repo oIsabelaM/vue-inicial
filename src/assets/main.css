@@ -1,33 +1,55 @@
 /* Estilos globais: cores, fontes e botões usados em todo o app. */
 
 :root {
-  --fundo: #faf7f5;
+  --fundo: #f2f5f7;
   --superficie: #ffffff;
-  --texto: #5b5159;
-  --suave: #8c8189;
-  --titulo: #2f2830;
-  --destaque: #8f5f79;
+  --texto: #4a5763;
+  --suave: #7b8794;
+  --titulo: #1e2a35;
+  --destaque: #4a7796;
   --sobre-destaque: #ffffff;
-  --destaque-suave: #f2e9ed;
-  --borda: #ebe4e1;
-  --borda-forte: #d9cfd3;
-  --fonte-titulo: 'Fraunces', Georgia, serif;
-  --fonte-texto: 'Inter', 'Segoe UI', sans-serif;
+  --destaque-suave: #e7eef3;
+  --borda: #e0e7ec;
+  --borda-forte: #c9d4dc;
+  --icone: #4a7796;
+  --sol: #c99b4a;
+  --rosa: #f0aebf; /* o toque fofo: bochechas do ícone */
+
+  /* Cor de fundo do cartão principal, conforme o tempo */
+  --tom-sol: #f7f1e3;
+  --tom-parcial: #eef2f2;
+  --tom-nublado: #e9edf1;
+  --tom-neblina: #edf0f1;
+  --tom-chuva: #e2eaf1;
+  --tom-neve: #eaf1f6;
+  --tom-tempestade: #dde2ea;
+
+  --fonte: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Modo escuro automático, conforme a configuração do aparelho */
 @media (prefers-color-scheme: dark) {
   :root {
-    --fundo: #1c181d;
-    --superficie: #26212a;
-    --texto: #d9d1d7;
-    --suave: #a0959d;
-    --titulo: #f4eef2;
-    --destaque: #d3a1b8;
-    --sobre-destaque: #1c181d;
-    --destaque-suave: #332c37;
-    --borda: #352f39;
-    --borda-forte: #4a4250;
+    --fundo: #131a21;
+    --superficie: #1b252e;
+    --texto: #c9d3dc;
+    --suave: #8f9ba7;
+    --titulo: #eef3f7;
+    --destaque: #86b4d3;
+    --sobre-destaque: #10202b;
+    --destaque-suave: #25333f;
+    --borda: #2a3844;
+    --borda-forte: #3a4a58;
+    --icone: #86b4d3;
+    --sol: #e0b866;
+
+    --tom-sol: #2a271f;
+    --tom-parcial: #212b31;
+    --tom-nublado: #222b33;
+    --tom-neblina: #242c30;
+    --tom-chuva: #1f2c38;
+    --tom-neve: #23303a;
+    --tom-tempestade: #1d2230;
   }
 }
 
@@ -39,7 +61,7 @@ body {
   margin: 0;
   background: var(--fundo);
   color: var(--texto);
-  font-family: var(--fonte-texto);
+  font-family: var(--fonte);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,12 +79,11 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: filter 0.15s, transform 0.15s;
+  transition: filter 0.15s;
 }
 
 .btn:hover:not(:disabled) {
   filter: brightness(0.94);
-  transform: translateY(-1px);
 }
 
 .btn:disabled {
@@ -70,13 +91,20 @@ body {
   cursor: wait;
 }
 
-.btn-contorno {
+.btn-link {
+  padding: 4px 8px;
+  border: none;
   background: transparent;
-  border-color: var(--borda-forte);
-  color: var(--titulo);
+  color: var(--destaque);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.btn-contorno:hover:not(:disabled) {
-  background: var(--destaque-suave);
-  filter: none;
+.btn-link:disabled {
+  opacity: 0.6;
+  cursor: wait;
 }

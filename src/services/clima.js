@@ -113,3 +113,15 @@ const DESCRICOES = {
 export function descricaoClima(codigo) {
   return DESCRICOES[codigo] || 'Condição desconhecida'
 }
+
+// Agrupa os códigos em poucos tipos de tempo (usado nos ícones e na cor do cartão).
+export function grupoClima(codigo) {
+  if (codigo === 0 || codigo === 1) return 'sol'
+  if (codigo === 2) return 'parcial'
+  if (codigo === 3) return 'nublado'
+  if (codigo === 45 || codigo === 48) return 'neblina'
+  if ((codigo >= 51 && codigo <= 67) || (codigo >= 80 && codigo <= 82)) return 'chuva'
+  if ((codigo >= 71 && codigo <= 77) || codigo === 85 || codigo === 86) return 'neve'
+  if (codigo >= 95) return 'tempestade'
+  return 'nublado'
+}

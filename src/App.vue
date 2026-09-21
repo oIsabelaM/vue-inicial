@@ -83,8 +83,8 @@ onMounted(() => {
 <template>
   <main class="app">
     <header class="topo">
-      <p class="sobretitulo">Previsão do tempo</p>
       <h1>Clima</h1>
+      <p class="sobretitulo">Previsão do tempo para qualquer cidade</p>
     </header>
 
     <BuscaCidade
@@ -116,30 +116,26 @@ onMounted(() => {
 .app {
   max-width: 640px;
   margin: 0 auto;
-  padding: 56px 20px 40px;
+  padding: 48px 20px 40px;
   text-align: center;
 }
 
 .topo {
-  margin-bottom: 32px;
-}
-
-.sobretitulo {
-  margin: 0 0 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--destaque);
+  margin-bottom: 28px;
 }
 
 h1 {
   margin: 0;
-  font-family: var(--fonte-titulo);
-  font-size: clamp(2.6rem, 8vw, 3.6rem);
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--titulo);
+}
+
+.sobretitulo {
+  margin: 2px 0 0;
+  font-size: 0.92rem;
+  color: var(--suave);
 }
 
 .erro {
@@ -149,6 +145,7 @@ h1 {
   border-radius: 10px;
   background: var(--destaque-suave);
   color: var(--titulo);
+  font-size: 0.95rem;
 }
 
 .aviso {

@@ -10,6 +10,8 @@ Aplicativo de previsão do tempo feito com Vue 3 e Vite. Busca uma cidade pelo n
 - Previsão dos próximos cinco dias, com máxima, mínima e chance de chuva
 - Mensagens claras para cidade não encontrada e falha de conexão
 - Guarda a última cidade pesquisada no navegador
+- Ícones de clima em SVG, feitos à mão, com um rostinho fofo no ícone principal
+- A cor do cartão muda conforme o tempo (sol, chuva, neblina...)
 - Visual claro ou escuro, conforme a configuração do aparelho
 
 ## Tecnologias
@@ -26,6 +28,7 @@ Os dados vêm da [Open-Meteo](https://open-meteo.com/), gratuita para uso não c
 - `src/components/BuscaCidade.vue`: campo de busca e botões
 - `src/components/ClimaAtual.vue`: clima de agora
 - `src/components/Previsao.vue`: próximos dias
+- `src/components/IconeClima.vue`: ícones de clima em SVG
 - `src/services/clima.js`: chamadas à API e descrição dos códigos de clima
 - `src/assets/main.css`: cores, fontes e botões
 

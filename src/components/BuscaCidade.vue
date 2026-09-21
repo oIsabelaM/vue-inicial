@@ -17,22 +17,22 @@ function enviar() {
 
 <template>
   <form class="busca" @submit.prevent="enviar">
-    <label for="cidade" class="oculto">Nome da cidade</label>
-    <input
-      id="cidade"
-      v-model="texto"
-      type="text"
-      placeholder="Digite o nome de uma cidade"
-      autocomplete="off"
-    />
-    <div class="acoes">
+    <div class="linha">
+      <label for="cidade" class="oculto">Nome da cidade</label>
+      <input
+        id="cidade"
+        v-model="texto"
+        type="text"
+        placeholder="Buscar cidade"
+        autocomplete="off"
+      />
       <button type="submit" class="btn" :disabled="carregando">
         {{ carregando ? 'Buscando...' : 'Buscar' }}
       </button>
-      <button type="button" class="btn btn-contorno" :disabled="carregando" @click="emit('localizacao')">
-        Usar minha localização
-      </button>
     </div>
+    <button type="button" class="btn-link" :disabled="carregando" @click="emit('localizacao')">
+      Usar minha localização
+    </button>
   </form>
 </template>
 
@@ -41,37 +41,35 @@ function enviar() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 32px;
+  gap: 8px;
+  margin-bottom: 28px;
 }
 
-.busca input {
+.linha {
+  display: flex;
   width: 100%;
-  max-width: 420px;
-  padding: 14px 18px;
+  gap: 10px;
+}
+
+.linha input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
   border: 1px solid var(--borda-forte);
   border-radius: 10px;
   background: var(--superficie);
   color: var(--titulo);
   font: inherit;
-  text-align: center;
   outline: none;
   transition: border-color 0.15s;
 }
 
-.busca input:focus {
+.linha input:focus {
   border-color: var(--destaque);
 }
 
-.busca input::placeholder {
+.linha input::placeholder {
   color: var(--suave);
-}
-
-.acoes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
 }
 
 .oculto {
